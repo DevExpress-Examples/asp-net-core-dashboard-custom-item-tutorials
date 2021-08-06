@@ -17,3 +17,7 @@ This example shows how to implement a HelloWorld [static custom item](https://do
 ## Documentation
 
 * [Create a Static Item](https://docs.devexpress.com/Dashboard/119836/web-dashboard/ui-elements-and-customization/create-a-custom-item/create-a-static-item)
+
+## More Examples
+
+* [Dashboard for React - How to create a static custom item](https://github.com/DevExpress-Examples/dashboard-react-app-hello-world-custom-item)
