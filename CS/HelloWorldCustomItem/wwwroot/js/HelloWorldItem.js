@@ -28,18 +28,14 @@
     }
     HelloWorldItemViewer.prototype = Object.create(DevExpress.Dashboard.CustomItemViewer.prototype);
     HelloWorldItemViewer.prototype.constructor = HelloWorldItemViewer;
-
-
     HelloWorldItemViewer.prototype.renderContent = function ($element, changeExisting) {
         var element = $element.jquery ? $element[0] : $element;
         element.innerText = this.getPropertyValue('customProperty');
     };
     function HelloWorldItem(dashboardControl) {
         DevExpress.Dashboard.ResourceManager.registerIcon(svgIcon);
-
         this.name = "helloWorldItem";
         this.metaData = helloWorldItemMetaData;
-
         this.createViewerItem = function (model, $element, content) {
             return new HelloWorldItemViewer(model, $element, content);
         }
