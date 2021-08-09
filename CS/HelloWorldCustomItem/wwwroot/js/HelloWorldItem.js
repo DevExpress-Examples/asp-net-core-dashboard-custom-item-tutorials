@@ -28,8 +28,7 @@
     }
     HelloWorldItemViewer.prototype = Object.create(DevExpress.Dashboard.CustomItemViewer.prototype);
     HelloWorldItemViewer.prototype.constructor = HelloWorldItemViewer;
-    HelloWorldItemViewer.prototype.renderContent = function ($element, changeExisting) {
-        var element = $element.jquery ? $element[0] : $element;
+    HelloWorldItemViewer.prototype.renderContent = function (element, changeExisting) {
         element.innerText = this.getPropertyValue('customProperty');
     };
     function HelloWorldItem(dashboardControl) {
