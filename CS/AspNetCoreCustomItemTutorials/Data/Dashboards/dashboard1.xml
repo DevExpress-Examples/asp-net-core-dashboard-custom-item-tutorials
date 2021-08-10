@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dashboard>
+  <Title Text="Sample Dashboard" />
+  <DataSources>
+    <SqlDataSource Name="SalesPerson" ComponentName="DataSource1" DataProcessingMode="Client">
+      <Connection Name="NWindConnectionString" FromAppConfig="true" />
+      <Query Type="SelectQuery" Name="SalesPerson">
+        <Tables>
+          <Table Name="SalesPerson" />
+        </Tables>
+        <Columns>
+          <AllColumns Table="SalesPerson" />
+        </Columns>
+      </Query>
+      <ConnectionOptions CloseConnection="true" />
+    </SqlDataSource>
+  </DataSources>
+  <Items>
+    <CustomItem ComponentName="customItemDashboardItem1" Name="Hello World Item 1" DataSource="DataSource1" DataMember="SalesPerson" CustomItemType="helloWorldItem">
+      <CustomProperties>
+        <customProperty>Hello World! You can input your text here.</customProperty>
+      </CustomProperties>
+    </CustomItem>
+    <CustomItem ComponentName="customItemDashboardItem2" Name="Data Aware Item 1" DataSource="DataSource1" DataMember="SalesPerson" CustomItemType="dataAwareItem">
+      <ColoringOptions UseGlobalColors="false" />
+      <DataItems>
+        <Dimension DataMember="ProductName" ColoringMode="Hue" DefaultId="DataItem0" />
+      </DataItems>
+      <SliceTables>
+        <SliceTable Name="SliceTable1">
+          <Dimensions>
+            <Dimension DefaultId="DataItem0" />
+          </Dimensions>
+        </SliceTable>
+      </SliceTables>
+      <ColoringDimensions>
+        <Dimension DefaultId="DataItem0" />
+      </ColoringDimensions>
+      <CustomMetadata>
+        <dimensionValue ItemType="Dimension" DefaultId="DataItem0" />
+      </CustomMetadata>
+    </CustomItem>
+    <CustomItem ComponentName="customItemDashboardItem3" Name="Funnel Chart 1" DataSource="DataSource1" DataMember="SalesPerson" CustomItemType="funnelChartCustomItem">
+      <CustomProperties>
+        <labelPositionProperty>Inside</labelPositionProperty>
+      </CustomProperties>
+      <InteractivityOptions MasterFilterMode="Single" />
+      <DataItems>
+        <Measure DataMember="ExtendedPrice" SummaryType="Count" DefaultId="DataItem0" />
+        <Dimension DataMember="CategoryName" ColoringMode="Hue" DefaultId="DataItem1" />
+      </DataItems>
+      <SliceTables>
+        <SliceTable Name="SliceTable1">
+          <Dimensions>
+            <Dimension DefaultId="DataItem1" />
+          </Dimensions>
+          <Measures>
+            <Measure DefaultId="DataItem0" />
+          </Measures>
+        </SliceTable>
+      </SliceTables>
+      <InteractivityTargets>
+        <Dimension DefaultId="DataItem1" />
+      </InteractivityTargets>
+      <ColoringDimensions>
+        <Dimension DefaultId="DataItem1" />
+      </ColoringDimensions>
+      <CustomMetadata>
+        <measureValue ItemType="Measure" DefaultId="DataItem0" />
+        <dimensionValue ItemType="Dimension" DefaultId="DataItem1" />
+      </CustomMetadata>
+    </CustomItem>
+  </Items>
+  <LayoutTree>
+    <LayoutGroup Weight="100">
+      <LayoutGroup Orientation="Vertical" Weight="121.96376996743113">
+        <LayoutItem DashboardItem="customItemDashboardItem2" Weight="165.41070082893745" />
+        <LayoutItem DashboardItem="customItemDashboardItem1" Weight="121.96376996743113" />
+      </LayoutGroup>
+      <LayoutItem DashboardItem="customItemDashboardItem3" Weight="208.85763169044378" />
+    </LayoutGroup>
+  </LayoutTree>
+</Dashboard>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Dashboard Web Application</title>
+
+    <link href="css/site.min.css" rel="stylesheet" />
+
+    <script type="text/javascript">
+        function onBeforeRender(dashboardControl) {
+            dashboardControl.registerExtension(new DevExpress.Dashboard.DashboardPanelExtension(dashboardControl));
+            // Register custom items:
+            dashboardControl.registerExtension(new HelloWorldCustomItem(dashboardControl));
+            dashboardControl.registerExtension(new DataAwareCustomItem(dashboardControl));
+            dashboardControl.registerExtension(new FunnelChartCustomItem(dashboardControl));
+        }
+    </script>
+</head>
+<body>
+    @RenderBody()
+
+
+    <script src="js/site.min.js"></script>
+    <script src="js/HelloWorldItem.js"></script>
+    <script src="js/DataAwareItem.js"></script>
+    <script src="js/FunnelChartItem.js"></script>
+</body>
+</html>
