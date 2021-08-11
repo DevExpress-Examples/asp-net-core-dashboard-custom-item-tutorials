@@ -44,7 +44,6 @@ This script contains a more "real-world" custom item that uses an external visua
 
 ![](images/external-widget-item.png)
 
-
 ## Documentation
 
 * [Create a Custom Item](https://docs.devexpress.com/Dashboard/117546/web-dashboard/ui-elements-and-customization/create-a-custom-item)
