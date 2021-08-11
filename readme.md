@@ -9,7 +9,7 @@
 
 <!-- default file list end -->
 
-# ASP.NET Core Dashboard - Custom Item Tutorials
+# Dashboard for ASP.NET Core - Custom Item Tutorials
 
 The example contains the source code of the scripts created in this step-by-step tutorials.
 
