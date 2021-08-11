@@ -40,8 +40,7 @@
             }]
         }],
         icon: 'funnelChartItemIcon',
-        title: 'Funnel Chart',
-        index: 2
+        title: 'Funnel Chart'
     };
 
     function FunnelChartItemViewer(model, $container, options) {
