@@ -11,7 +11,6 @@
     <script type="text/javascript">
         function onBeforeRender(dashboardControl) {
             dashboardControl.registerExtension(new DevExpress.Dashboard.DashboardPanelExtension(dashboardControl));
-            // Register custom items:
             dashboardControl.registerExtension(new HelloWorldCustomItem(dashboardControl));
             dashboardControl.registerExtension(new DataAwareCustomItem(dashboardControl));
             dashboardControl.registerExtension(new FunnelChartCustomItem(dashboardControl));
