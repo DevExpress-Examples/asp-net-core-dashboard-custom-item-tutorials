@@ -1,8 +1,8 @@
-﻿var HelloWorldCustomItem = (function () {
+var HelloWorldCustomItem = (function () {
     var svgIcon = '<svg id="helloWorldItemIcon" viewBox="0 0 24 24"><path stroke="#42f48f" fill="#42f48f" d="M12 2 L2 22 L22 22 Z" /></svg>';
     var helloWorldItemMetaData = {
         customProperties: [{
-            ownerType: 'CustomItem',
+            ownerType: DevExpress.Dashboard.Model.CustomItem,
             propertyName: 'customProperty',
             valueType: 'string',
             defaultValue: 'Hello World!'
