@@ -11,7 +11,7 @@
 
 # Dashboard for ASP.NET Core - Custom Item Tutorials
 
-The example contains the source code of the scripts created in the step-by-step Custom Item tutorials.
+The example contains the source code of the scripts created in the step-by-step [Custom Item](https://docs.devexpress.com/Dashboard/117546/web-dashboard/ui-elements-and-customization/create-a-custom-item) tutorials.
 
 ## Static Custom Item
 
