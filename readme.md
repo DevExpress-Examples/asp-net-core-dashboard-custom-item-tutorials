@@ -1,6 +1,10 @@
+# Dashboard for ASP.NET Core - Custom Item Tutorials
+
+The example contains the source code of the scripts created in the step-by-step [Custom Item](https://docs.devexpress.com/Dashboard/117546/web-dashboard/ui-elements-and-customization/create-a-custom-item) tutorials.
+
 <!-- default file list -->
 
-*Files to look at*:
+## Files to Look at
 
 * [HelloWorldItem.js](CS/AspNetCoreCustomItemTutorials/wwwroot/js/HelloWorldItem.js)
 * [DataAwareItem.js](CS/AspNetCoreCustomItemTutorials/wwwroot/js/DataAwareItem.js)
@@ -8,10 +12,6 @@
 * [_Layout.cshtml](CS/AspNetCoreCustomItemTutorials/Pages/_Layout.cshtml)
 
 <!-- default file list end -->
-
-# Dashboard for ASP.NET Core - Custom Item Tutorials
-
-The example contains the source code of the scripts created in the step-by-step [Custom Item](https://docs.devexpress.com/Dashboard/117546/web-dashboard/ui-elements-and-customization/create-a-custom-item) tutorials.
 
 ## Static Custom Item
 
