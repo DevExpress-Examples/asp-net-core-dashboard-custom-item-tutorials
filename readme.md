@@ -9,7 +9,7 @@ The example contains the source code of the scripts created in the step-by-step 
 
 <!-- default file list -->
 
-## Files to Look at
+## Files to Look At
 
 * [HelloWorldItem.js](CS/AspNetCoreCustomItemTutorials/wwwroot/js/HelloWorldItem.js)
 * [DataAwareItem.js](CS/AspNetCoreCustomItemTutorials/wwwroot/js/DataAwareItem.js)
