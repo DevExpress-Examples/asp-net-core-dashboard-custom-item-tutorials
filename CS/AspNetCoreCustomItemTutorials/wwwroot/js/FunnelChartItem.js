@@ -1,11 +1,11 @@
-﻿var FunnelChartCustomItem = (function () {
-    var Dashboard = DevExpress.Dashboard;
-    var Model = DevExpress.Dashboard.Model;
-    var Designer = DevExpress.Dashboard.Designer;
-    var dxFunnel = DevExpress.viz.dxFunnel;
+var FunnelChartCustomItem = (function () {
+    const Dashboard = DevExpress.Dashboard;
+    const Model = DevExpress.Dashboard.Model;
+    const Designer = DevExpress.Dashboard.Designer;
+    const dxFunnel = DevExpress.viz.dxFunnel;
 
-    var svgIcon = '<svg id="funnelChartItemIcon" viewBox="0 0 24 24"><path stroke="#ffffff" fill="#f442ae" d="M12 2 L2 22 L22 22 Z" /></svg>';
-    var funnelChartItemMetaData = {
+    const svgIcon = '<svg id="funnelChartItemIcon" viewBox="0 0 24 24"><path stroke="#ffffff" fill="#f442ae" d="M12 2 L2 22 L22 22 Z" /></svg>';
+    const funnelChartItemMetaData = {
         bindings: [{
             propertyName: 'measureValue',
             dataItemType: 'Measure',
