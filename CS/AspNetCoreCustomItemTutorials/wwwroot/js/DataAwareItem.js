@@ -1,6 +1,6 @@
-﻿var DataAwareCustomItem = (function () {
-    var svgIcon = '<svg id="dataAwareItemIcon" viewBox="0 0 24 24"><path stroke="#ffffff" fill="#4842f4" d="M12 2 L2 22 L22 22 Z" /></svg>';    
-    var dataAwareItemMetaData = {
+var DataAwareCustomItem = (function () {
+    const svgIcon = '<svg id="dataAwareItemIcon" viewBox="0 0 24 24"><path stroke="#ffffff" fill="#4842f4" d="M12 2 L2 22 L22 22 Z" /></svg>';    
+    const dataAwareItemMetaData = {
         bindings: [{
             propertyName: 'dimensionValue',
             dataItemType: 'Dimension',
