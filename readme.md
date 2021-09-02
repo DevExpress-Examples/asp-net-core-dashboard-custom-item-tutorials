@@ -11,10 +11,10 @@ The example contains the source code of the scripts created in the step-by-step 
 
 ## Files to Look At
 
-* [HelloWorldItem.js](CS/AspNetCoreCustomItemTutorials/wwwroot/js/HelloWorldItem.js)
-* [DataAwareItem.js](CS/AspNetCoreCustomItemTutorials/wwwroot/js/DataAwareItem.js)
-* [FunnelChartItem.js](CS/AspNetCoreCustomItemTutorials/wwwroot/js/FunnelChartItem.js)
-* [_Layout.cshtml](CS/AspNetCoreCustomItemTutorials/Pages/_Layout.cshtml)
+* [HelloWorldItem.js](./CS/AspNetCoreCustomItemTutorials/wwwroot/js/HelloWorldItem.js)
+* [DataAwareItem.js](./CS/AspNetCoreCustomItemTutorials/wwwroot/js/DataAwareItem.js)
+* [FunnelChartItem.js](./CS/AspNetCoreCustomItemTutorials/wwwroot/js/FunnelChartItem.js)
+* [_Layout.cshtml](./CS/AspNetCoreCustomItemTutorials/Pages/_Layout.cshtml)
 
 <!-- default file list end -->
 
