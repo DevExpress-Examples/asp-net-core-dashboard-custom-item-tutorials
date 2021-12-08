@@ -51,20 +51,25 @@ namespace AspNetCoreCustomItemTutorials {
 
                 // Registers an Object data source.
                 DashboardObjectDataSource objDataSource = new DashboardObjectDataSource("Object Data Source");
+                objDataSource.DataId = "objDataConnection";
                 dataSourceStorage.RegisterDataSource("objDataSource", objDataSource.SaveToXml());
 
                 // Registers an Excel data source.
                 DashboardExcelDataSource excelDataSource = new DashboardExcelDataSource("Excel Data Source");
-                excelDataSource.FileName = FileProvider.GetFileInfo("Data/Sales.xlsx").PhysicalPath;
+                excelDataSource.ConnectionName = "excelDataConnection";
                 excelDataSource.SourceOptions = new ExcelSourceOptions(new ExcelWorksheetSettings("Sheet1"));
                 dataSourceStorage.RegisterDataSource("excelDataSource", excelDataSource.SaveToXml());
 
                 configurator.SetDataSourceStorage(dataSourceStorage);
 
                 configurator.DataLoading += (s, e) => {
-                    if (e.DataSourceName == "Object Data Source")
-                    {
+                    if (e.DataId == "objDataConnection") {
                         e.Data = Invoices.CreateData();
+                    }
+                };
+                configurator.ConfigureDataConnection += (s, e) => {
+                    if (e.ConnectionName == "excelDataConnection") {
+                        e.ConnectionParameters = new ExcelDataSourceConnectionParameters(FileProvider.GetFileInfo("Data/Sales.xlsx").PhysicalPath);
                     }
                 };
                 return configurator;
