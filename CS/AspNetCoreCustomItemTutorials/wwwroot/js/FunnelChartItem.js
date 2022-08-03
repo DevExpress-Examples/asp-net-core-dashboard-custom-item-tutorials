@@ -1,4 +1,4 @@
-var FunnelChartCustomItem = (function () {
+window.FunnelChartCustomItem = (function () {
     const Dashboard = DevExpress.Dashboard;
     const Model = DevExpress.Dashboard.Model;
     const Designer = DevExpress.Dashboard.Designer;
@@ -43,92 +43,93 @@ var FunnelChartCustomItem = (function () {
         title: 'Funnel Chart'
     };
 
-    function FunnelChartItemViewer(model, $container, options) {
-        var parent = Dashboard.CustomItemViewer.call(this, model, $container, options);
+    class FunnelChartItemViewer extends Dashboard.CustomItemViewer { 
+        constructor(model, $container, options) {
+            super(model, $container, options);
 
-        this.dxFunnelWidget = null;
-        this.dxFunnelWidgetSettings = undefined;
-    }
-    FunnelChartItemViewer.prototype = Object.create(Dashboard.CustomItemViewer.prototype);
-    FunnelChartItemViewer.prototype.constructor = FunnelChartItemViewer;
-
-    FunnelChartItemViewer.prototype._getDataSource = function () {
-        var clientData = [];
-        if (this.getBindingValue('measureValue').length > 0) {
-            this.iterateData(function (dataRow) {
-                clientData.push({
-                    measureValue: dataRow.getValue('measureValue')[0],
-                    dimensionValue: dataRow.getValue('dimensionValue')[0] || '',
-                    dimensionDisplayText: dataRow.getDisplayText('dimensionValue')[0],
-                    measureDisplayText: dataRow.getDisplayText('measureValue')[0],
-                    dimensionColor: dataRow.getColor('dimensionValue')[0],
-                    clientDataRow: dataRow
+            this.dxFunnelWidget = null;
+            this.dxFunnelWidgetSettings = undefined;
+        }
+        _getDataSource() {
+            var clientData = [];
+            if (this.getBindingValue('measureValue').length > 0) {
+                this.iterateData(function (dataRow) {
+                    clientData.push({
+                        measureValue: dataRow.getValue('measureValue')[0],
+                        dimensionValue: dataRow.getValue('dimensionValue')[0] || '',
+                        dimensionDisplayText: dataRow.getDisplayText('dimensionValue')[0],
+                        measureDisplayText: dataRow.getDisplayText('measureValue')[0],
+                        dimensionColor: dataRow.getColor('dimensionValue')[0],
+                        clientDataRow: dataRow
+                    });
                 });
+            }
+            return clientData;
+        }
+
+        _getDxFunnelWidgetSettings() {
+            var _this = this;
+            return {
+                dataSource: this._getDataSource(),
+                argumentField: "dimensionValue",
+                valueField: "measureValue",
+                colorField: "dimensionColor",
+                selectionMode: "multiple",
+                label: {
+                    customizeText: function (e) {
+                        return e.item.data.dimensionDisplayText + ': ' + e.item.data.measureDisplayText;
+                    },
+                    position: this.getPropertyValue('labelPositionProperty').toLowerCase()
+                },
+                onItemClick: function (e) {
+                    _this.setMasterFilter(e.item.data.clientDataRow);
+                }
+            };
+        }
+
+        setSelection() {
+            var _this = this;
+            this.dxFunnelWidget.getAllItems().forEach(function (item) {
+                item.select(_this.isSelected(item.data.clientDataRow));
             });
         }
-        return clientData;
-    };
 
-    FunnelChartItemViewer.prototype._getDxFunnelWidgetSettings = function () {
-        var _this = this;
-        return {
-            dataSource: this._getDataSource(),
-            argumentField: "dimensionValue",
-            valueField: "measureValue",
-            colorField: "dimensionColor",
-            selectionMode: "multiple",
-            label: {
-                customizeText: function (e) {
-                    return e.item.data.dimensionDisplayText + ': ' + e.item.data.measureDisplayText;
-                },
-                position: this.getPropertyValue('labelPositionProperty').toLowerCase()
-            },
-            onItemClick: function (e) {
-                _this.setMasterFilter(e.item.data.clientDataRow);
-            }
-        };
-    };
-
-    FunnelChartItemViewer.prototype.setSelection = function () {
-        var _this = this;
-        this.dxFunnelWidget.getAllItems().forEach(function (item) {
-            item.select(_this.isSelected(item.data.clientDataRow));
-        });
-    };
-
-    FunnelChartItemViewer.prototype.clearSelection = function () {
-        this.dxFunnelWidget.clearSelection();
-    };
-
-    FunnelChartItemViewer.prototype.setSize = function (width, height) {
-        Object.getPrototypeOf(FunnelChartItemViewer.prototype).setSize.call(this, width, height);
-        this.dxFunnelWidget.render();
-    };
-
-    FunnelChartItemViewer.prototype.renderContent = function ($element, changeExisting) {
-        if (!changeExisting) {
-            var element = $element.jquery ? $element[0] : $element;
-
-            while (element.firstChild)
-                element.removeChild(element.firstChild);
-
-            var div = document.createElement('div');
-            div.style.width = "100%";
-            div.style.height = "100%";
-            element.appendChild(div);
-            this.dxFunnelWidget = new dxFunnel(div, this._getDxFunnelWidgetSettings());
-        } else {
-            this.dxFunnelWidget.option(this._getDxFunnelWidgetSettings());
+        clearSelection() {
+            this.dxFunnelWidget.clearSelection();
         }
-    };
-    function FunnelChartItem(dashboardControl) {
-        Dashboard.ResourceManager.registerIcon(svgIcon);
-        this.name = "funnelChartCustomItem",
-            this.metaData = funnelChartItemMetaData,
-            this.createViewerItem = function (model, $element, content) {
-                return new FunnelChartItemViewer(model, $element, content);
+
+        setSize(width, height) {
+            super.setSize(width, height);
+            this.dxFunnelWidget.render();
+        }
+
+        renderContent($element, changeExisting) {
+            if (!changeExisting) {
+                var element = $element.jquery ? $element[0] : $element;
+
+                while (element.firstChild)
+                    element.removeChild(element.firstChild);
+
+                var div = document.createElement('div');
+                div.style.width = "100%";
+                div.style.height = "100%";
+                element.appendChild(div);
+                this.dxFunnelWidget = new dxFunnel(div, this._getDxFunnelWidgetSettings());
+            } else {
+                this.dxFunnelWidget.option(this._getDxFunnelWidgetSettings());
             }
-    };
+        }
+    }
+    class FunnelChartItem {
+        constructor(dashboardControl) {
+            Dashboard.ResourceManager.registerIcon(svgIcon);
+            this.name = "funnelChartCustomItem",
+            this.metaData = funnelChartItemMetaData;
+        }
+        createViewerItem(model, $element, content) {
+            return new FunnelChartItemViewer(model, $element, content);
+        }
+    }
 
     return FunnelChartItem;
 })();
