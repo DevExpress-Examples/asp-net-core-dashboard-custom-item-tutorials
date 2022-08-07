@@ -1,5 +1,8 @@
 window.HelloWorldCustomItem = (function () {
+    // #region svgIcon
     const svgIcon = '<svg id="helloWorldItemIcon" viewBox="0 0 24 24"><path stroke="#42f48f" fill="#42f48f" d="M12 2 L2 22 L22 22 Z" /></svg>';
+    // #endregion
+    // #region metadata
     const helloWorldItemMetaData = {
         customProperties: [{
             ownerType: DevExpress.Dashboard.Model.CustomItem,
@@ -23,6 +26,8 @@ window.HelloWorldCustomItem = (function () {
         icon: 'helloWorldItemIcon',
         title: 'Hello World Item'
     };
+    // #endregion
+    // #region viewer
     class HelloWorldItemViewer extends DevExpress.Dashboard.CustomItemViewer {
         constructor(model, $container, options) {
             super(model, $container, options);
@@ -32,6 +37,8 @@ window.HelloWorldCustomItem = (function () {
             element.innerText = this.getPropertyValue('customProperty');
         }
     }
+    // #endregion
+    // #region createItem
     class HelloWorldItem {
         constructor(dashboardControl) {
             DevExpress.Dashboard.ResourceManager.registerIcon(svgIcon);
@@ -43,4 +50,5 @@ window.HelloWorldCustomItem = (function () {
         }
     }
     return HelloWorldItem;
+    // #endregion
 })();
