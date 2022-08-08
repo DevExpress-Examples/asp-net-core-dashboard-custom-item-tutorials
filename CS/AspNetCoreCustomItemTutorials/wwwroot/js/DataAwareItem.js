@@ -1,5 +1,8 @@
 window.DataAwareCustomItem = (function () {
-    const svgIcon = '<svg id="dataAwareItemIcon" viewBox="0 0 24 24"><path stroke="#ffffff" fill="#4842f4" d="M12 2 L2 22 L22 22 Z" /></svg>';    
+    // #region svgIcon
+    const svgIcon = '<svg id="dataAwareItemIcon" viewBox="0 0 24 24"><path stroke="#ffffff" fill="#4842f4" d="M12 2 L2 22 L22 22 Z" /></svg>';
+    // #endregion
+    // #region metadata
     const dataAwareItemMetaData = {
         bindings: [{
             propertyName: 'dimensionValue',
@@ -27,6 +30,8 @@ window.DataAwareCustomItem = (function () {
         icon: 'dataAwareItemIcon',
         title: 'Data Aware Item'
     };
+    // #endregion
+    // #region viewer
     class DataAwareItemViewer extends DevExpress.Dashboard.CustomItemViewer {
         constructor(model, $container, options) {
             super(model, $container, options);
@@ -64,6 +69,8 @@ window.DataAwareCustomItem = (function () {
             }
         }
     }
+    // #endregion
+    // #region createItem
     class DataAwareItem {
         constructor(dashboardControl) {
             DevExpress.Dashboard.ResourceManager.registerIcon(svgIcon);
@@ -75,4 +82,5 @@ window.DataAwareCustomItem = (function () {
         }
     }
     return DataAwareItem;
+    // #endregion
 })();
