@@ -1,10 +1,14 @@
 window.FunnelChartCustomItem = (function () {
+    // #region const
     const Dashboard = DevExpress.Dashboard;
     const Model = DevExpress.Dashboard.Model;
     const Designer = DevExpress.Dashboard.Designer;
     const dxFunnel = DevExpress.viz.dxFunnel;
-
+    // #endregion
+    // #region svgIcon
     const svgIcon = '<svg id="funnelChartItemIcon" viewBox="0 0 24 24"><path stroke="#ffffff" fill="#f442ae" d="M12 2 L2 22 L22 22 Z" /></svg>';
+    // #endregion
+    // #region metadata
     const funnelChartItemMetaData = {
         bindings: [{
             propertyName: 'measureValue',
@@ -42,7 +46,8 @@ window.FunnelChartCustomItem = (function () {
         icon: 'funnelChartItemIcon',
         title: 'Funnel Chart'
     };
-
+    // #endregion
+    // #region viewer
     class FunnelChartItemViewer extends Dashboard.CustomItemViewer { 
         constructor(model, $container, options) {
             super(model, $container, options);
@@ -120,6 +125,8 @@ window.FunnelChartCustomItem = (function () {
             }
         }
     }
+    // #endregion
+    // #region createItem
     class FunnelChartItem {
         constructor(dashboardControl) {
             Dashboard.ResourceManager.registerIcon(svgIcon);
@@ -132,4 +139,5 @@ window.FunnelChartCustomItem = (function () {
     }
 
     return FunnelChartItem;
+    // #endregion
 })();
