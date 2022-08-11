@@ -1,10 +1,10 @@
 window.FunnelChartCustomItem = (function () {
-    // #region const
-    const Dashboard = DevExpress.Dashboard;
+    // #region constMetadata
     const Model = DevExpress.Dashboard.Model;
     const Designer = DevExpress.Dashboard.Designer;
-    const dxFunnel = DevExpress.viz.dxFunnel;
     // #endregion
+    const Dashboard = DevExpress.Dashboard;
+    const dxFunnel = DevExpress.viz.dxFunnel;
     // #region svgIcon
     const svgIcon = '<svg id="funnelChartItemIcon" viewBox="0 0 24 24"><path stroke="#ffffff" fill="#f442ae" d="M12 2 L2 22 L22 22 Z" /></svg>';
     // #endregion
