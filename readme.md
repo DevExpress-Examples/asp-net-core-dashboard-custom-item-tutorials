@@ -7,17 +7,6 @@
 
 The example contains the source code of the scripts created in the step-by-step [Custom Item](https://docs.devexpress.com/Dashboard/117546/web-dashboard/ui-elements-and-customization/create-a-custom-item) tutorials.
 
-<!-- default file list -->
-
-## Files to Review
-
-* [HelloWorldItem.js](./CS/AspNetCoreCustomItemTutorials/wwwroot/js/HelloWorldItem.js)
-* [DataAwareItem.js](./CS/AspNetCoreCustomItemTutorials/wwwroot/js/DataAwareItem.js)
-* [FunnelChartItem.js](./CS/AspNetCoreCustomItemTutorials/wwwroot/js/FunnelChartItem.js)
-* [_Layout.cshtml](./CS/AspNetCoreCustomItemTutorials/Pages/_Layout.cshtml)
-
-<!-- default file list end -->
-
 ## Static Custom Item
 
 **View Tutorial**: [Create a Static Custom Item](https://docs.devexpress.com/Dashboard/119836/web-dashboard/ui-elements-and-customization/create-a-custom-item/create-a-static-item)
@@ -48,6 +37,13 @@ This script contains a [data-aware custom item](https://docs.devexpress.com/Dash
 This script contains a more "real-world" custom item that uses an external visualization widget. In this example, it is the [dxFunnel](https://js.devexpress.com/DevExtreme/ApiReference/UI_Components/dxFunnel/) widget that can show values across multiple stages in a process. This widget supports [data binding](https://docs.devexpress.com/Dashboard/116982/web-dashboard/create-dashboards-on-the-web/binding-dashboard-items-to-data/bind-dashboard-items-to-data-in-the-web-dashboards-ui), [master filtering](https://docs.devexpress.com/Dashboard/117060/web-dashboard/create-dashboards-on-the-web/interactivity/master-filtering), and [coloring](https://docs.devexpress.com/Dashboard/117152/web-dashboard/create-dashboards-on-the-web/appearance-customization/coloring).
 
 ![](images/external-widget-item.png)
+
+## Files to Review
+
+* [HelloWorldItem.js](./CS/AspNetCoreCustomItemTutorials/wwwroot/js/HelloWorldItem.js)
+* [DataAwareItem.js](./CS/AspNetCoreCustomItemTutorials/wwwroot/js/DataAwareItem.js)
+* [FunnelChartItem.js](./CS/AspNetCoreCustomItemTutorials/wwwroot/js/FunnelChartItem.js)
+* [_Layout.cshtml](./CS/AspNetCoreCustomItemTutorials/Pages/_Layout.cshtml)
 
 ## Documentation
 
