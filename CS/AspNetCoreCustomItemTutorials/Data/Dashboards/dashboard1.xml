@@ -41,9 +41,6 @@
       </CustomMetadata>
     </CustomItem>
     <CustomItem ComponentName="customItemDashboardItem3" Name="Funnel Chart 1" DataSource="DataSource1" DataMember="SalesPerson" CustomItemType="funnelChartCustomItem">
-      <CustomProperties>
-        <labelPositionProperty>Inside</labelPositionProperty>
-      </CustomProperties>
       <InteractivityOptions MasterFilterMode="Single" />
       <DataItems>
         <Measure DataMember="ExtendedPrice" SummaryType="Count" DefaultId="DataItem0" />

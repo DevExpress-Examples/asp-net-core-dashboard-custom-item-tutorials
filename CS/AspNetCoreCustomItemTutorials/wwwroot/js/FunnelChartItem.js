@@ -51,7 +51,6 @@ window.FunnelChartCustomItem = (function () {
     class FunnelChartItemViewer extends Dashboard.CustomItemViewer { 
         constructor(model, $container, options) {
             super(model, $container, options);
-
             this.dxFunnelWidget = null;
             this.dxFunnelWidgetSettings = undefined;
         }
@@ -108,6 +107,10 @@ window.FunnelChartCustomItem = (function () {
             this.dxFunnelWidget.render();
         }
 
+        allowExportSingleItem() {
+            return true;
+        }
+
         renderContent($element, changeExisting) {
             if (!changeExisting) {
                 var element = $element.jquery ? $element[0] : $element;
@@ -124,6 +127,7 @@ window.FunnelChartCustomItem = (function () {
                 this.dxFunnelWidget.option(this._getDxFunnelWidgetSettings());
             }
         }
+
     }
     // #endregion
     // #region createItem
