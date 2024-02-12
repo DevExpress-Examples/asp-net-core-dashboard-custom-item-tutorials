@@ -1,21 +1,30 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk.Web">
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="DevExpress.AspNetCore.Dashboard" Version="23.1.*-*" />
-    <PackageReference Include="DevExpress.Document.Processor" Version="23.1.*-*" />
-    <PackageReference Include="DevExpress.Spreadsheet.Core" Version="23.1.*-*" />
-    <PackageReference Include="System.Data.SQLite.Core" Version="1.0.112.2" />
-    <PackageReference Include="BuildBundlerMinifier" Version="3.2.447" />
-    <PackageReference Include="Microsoft.Web.LibraryManager.Build" Version="2.1.76" />
+    <PackageReference Include="DevExpress.AspNetCore.Dashboard" Version="23.2.4" />
+    <PackageReference Include="DevExpress.Document.Processor" Version="23.2.4" />
+    <PackageReference Include="DevExpress.Spreadsheet.Core" Version="23.2.4" />
+    <PackageReference Include="System.Data.SQLite.Core" Version="1.0.118" />
+    <PackageReference Include="BuildBundlerMinifier" Version="3.2.449" />
+    <PackageReference Include="Microsoft.Web.LibraryManager.Build" Version="2.1.175" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="node_modules\**" />
     <Content Remove="node_modules\**" />
     <EmbeddedResource Remove="node_modules\**" />
     <None Remove="node_modules\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\**">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\js\site.min.js" />
   </ItemGroup>
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="LibraryManagerRestore" Condition=" '$(Configuration)' == 'Debug' And !Exists('node_modules') ">
     <!-- Ensure Node.js is installed -->

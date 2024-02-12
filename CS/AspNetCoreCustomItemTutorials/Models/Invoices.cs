@@ -1,9 +1,10 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace AspNetCoreCustomItemTutorials {
     public class Invoices {
         static Random rnd = new Random();
+
         public string Country { get; set; }
         public string City { get; set; }
         public string ProductName { get; set; }

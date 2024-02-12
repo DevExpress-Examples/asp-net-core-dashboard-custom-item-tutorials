@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31129.286
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34525.116
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCoreCustomItemTutorials", "AspNetCoreCustomItemTutorials\AspNetCoreCustomItemTutorials.csproj", "{52722D9C-F44F-4385-BA67-0DFF49188FF5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCoreCustomItemTutorials", "AspNetCoreCustomItemTutorials\AspNetCoreCustomItemTutorials.csproj", "{265DC214-5F8A-4FBE-AB65-9850782BFD6F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{52722D9C-F44F-4385-BA67-0DFF49188FF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{52722D9C-F44F-4385-BA67-0DFF49188FF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{52722D9C-F44F-4385-BA67-0DFF49188FF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{52722D9C-F44F-4385-BA67-0DFF49188FF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{265DC214-5F8A-4FBE-AB65-9850782BFD6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{265DC214-5F8A-4FBE-AB65-9850782BFD6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{265DC214-5F8A-4FBE-AB65-9850782BFD6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{265DC214-5F8A-4FBE-AB65-9850782BFD6F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {88872A05-04E6-41B8-B896-0F6782150BAA}
+		SolutionGuid = {9A7B9680-E321-494D-ADB4-2CDAED51978F}
 	EndGlobalSection
 EndGlobal

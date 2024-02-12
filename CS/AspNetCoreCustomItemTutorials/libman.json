@@ -10,6 +10,11 @@
         "dxicons.woff",
         "dxicons.woff2"
       ]
+    },
+    {
+      "library": "node_modules/ace-builds/css/",
+      "destination": "wwwroot/css/ace",
+      "files": [ "*.png", "*.svg" ]
     }
   ]
 }
