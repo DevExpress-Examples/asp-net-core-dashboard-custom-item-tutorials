@@ -46,29 +46,8 @@ builder.Services.AddScoped<DashboardConfigurator>((IServiceProvider serviceProvi
     sqlDataSource.Queries.Add(query);
     dataSourceStorage.RegisterDataSource("sqlDataSource", sqlDataSource.SaveToXml());
 
-    // Registers an Object data source.
-    DashboardObjectDataSource objDataSource = new DashboardObjectDataSource("Object Data Source");
-    objDataSource.DataId = "objDataConnection";
-    dataSourceStorage.RegisterDataSource("objDataSource", objDataSource.SaveToXml());
-
-    // Registers an Excel data source.
-    DashboardExcelDataSource excelDataSource = new DashboardExcelDataSource("Excel Data Source");
-    excelDataSource.ConnectionName = "excelDataConnection";
-    excelDataSource.SourceOptions = new ExcelSourceOptions(new ExcelWorksheetSettings("Sheet1"));
-    dataSourceStorage.RegisterDataSource("excelDataSource", excelDataSource.SaveToXml());
-
     configurator.SetDataSourceStorage(dataSourceStorage);
 
-    configurator.DataLoading += (s, e) => {
-        if (e.DataId == "objDataConnection") {
-            e.Data = Invoices.CreateData();
-        }
-    };
-    configurator.ConfigureDataConnection += (s, e) => {
-        if (e.ConnectionName == "excelDataConnection") {
-            e.ConnectionParameters = new ExcelDataSourceConnectionParameters(fileProvider.GetFileInfo("Data/Sales.xlsx").PhysicalPath);
-        }
-    };
     return configurator;
 });
 
