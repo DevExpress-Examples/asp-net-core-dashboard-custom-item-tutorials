@@ -14,7 +14,6 @@ var builder = WebApplication.CreateBuilder(args);
 
 IFileProvider? fileProvider = builder.Environment.ContentRootFileProvider;
 IConfiguration? configuration = builder.Configuration;
-DashboardExportSettings.CompatibilityMode = DashboardExportCompatibilityMode.Restricted;
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
